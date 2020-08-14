@@ -1,24 +1,29 @@
 # app
 
-## Project setup
+### Install vue, install [eel](https://github.com/samuelhwilliams/Eel)
 ```
-npm install
+npm i -g vue
+pip install eel
 ```
 
-### Compiles and hot-reloads for development
+### Create project named `app`
+```
+vue create app
+```
+
+### Verify
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Add app.py and run the follow for development
+```
+python app.py
+npm run serve
+```
+
+### Build for production 
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+change `start_eel(True)` to `start_eel(False)` for production
