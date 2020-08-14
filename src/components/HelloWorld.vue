@@ -31,6 +31,17 @@
 </template>
 
 <script>
+export const eel = window.eel;
+eel.set_host("ws://localhost:9000");
+// Expose the `sayHelloJS` function to Python as `say_hello_js`
+function sayHelloJS(x) {
+  console.log("Hello from " + x);
+}
+// WARN: must use window.eel to keep parse-able eel.expose{...}
+window.eel.expose(sayHelloJS, "say_hello_js");
+// Test calling sayHelloJS, then call the corresponding Python function
+sayHelloJS("Javascript World!");
+eel.say_hello_py("Javascript World!");
 export default {
   name: 'HelloWorld',
   props: {
